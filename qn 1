@@ -1,0 +1,53 @@
+import java.util.*;
+
+class Students {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer,Integer> Student = new HashMap<>();
+        for(int i = 0; i<3 ; i++)
+        {
+            System.out.println("enter std reg no. : ");
+            int a = sc.nextInt();
+            System.out.println("enter marks : ");
+            int b = sc.nextInt();
+            
+            Student.put(a,b);
+        }
+        
+       // for(Map.Entry<Integer,Integer> m : Student.entrySet()){
+         //   System.out.println(m.getKey() + " " + m.getValue());
+        //}
+        getStudents(Student);    
+        }
+          public static HashMap<Integer,String> getStudents(HashMap<Integer,Integer> outputmap)
+          {
+              HashMap<Integer,String> Studentout = new HashMap<>();
+              
+              for(Integer key : outputmap.keySet())
+              {
+                  int val = outputmap.get(key);
+                  if(val>=90)
+                  {
+                      Studentout.put(key,"gold");
+                  }
+                  else if(val>=80)
+                  {
+                      Studentout.put(key,"silver");
+                  }
+                  else if(val>=70){
+                      Studentout.put(key,"bronze");
+                  }
+                  else
+                  {
+                      Studentout.put(key, " no medel");
+                  }
+              }
+              System.out.println(Studentout);
+              return Studentout;
+              
+          }
+        
+
+    
+}
